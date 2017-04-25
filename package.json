@@ -1,0 +1,45 @@
+{
+  "name": "jud-vdom-tester",
+  "version": "0.0.1",
+  "description": "jud vdom tester",
+  "main": "index.js",
+  "scripts": {
+    "build": "buble -i src -o lib",
+    "clear": "rm -Rf lib/*",
+    "dev": "gazeer -p \"src/*.js\" -c \"npm run lint && npm run build\"",
+    "lint": "eslint src test",
+    "lint:fix": "eslint --fix src test",
+    "prepare": "npm run clear && npm run lint && npm run build",
+    "prepublish": "npm run prepare",
+    "pretest": "npm run prepare",
+    "test": "mocha",
+    "test:dev": "mocha -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vkiding/jud-vdom-tester.git"
+  },
+  "keywords": [
+    "jud"
+  ],
+  "author": "vkiding",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/vkiding/jud-vdom-tester/issues"
+  },
+  "dependencies": {
+    "jsonp": "^0.2.0",
+    "xhr2": "^0.1.3"
+  },
+  "devDependencies": {
+    "buble": "^0.13.2",
+    "chai": "^3.5.0",
+    "eslint": "^3.5.0",
+    "gazeer": "^0.1.1",
+    "mocha": "^3.0.2",
+    "sinon": "^1.17.5",
+    "sinon-chai": "^2.8.0",
+    "jud-js-runtime": "^0.0.2"
+  },
+  "homepage": "https://github.com/vkiding/jud-vdom-tester#readme"
+}
